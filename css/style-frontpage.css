@@ -1,0 +1,89 @@
+* {
+    /* Convention */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Century Gothic;
+}
+
+body {
+    /* Background Image */
+    background-image: url("../images/backgrounds/frontpage-desktop.png");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover; /* cover entire container */
+    background-origin: border-box;
+
+}
+
+/* Main Tag Section */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 92vh; /* header is 8 vh */
+}
+
+.intro-container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 40%;
+}
+
+.intro-container > div {
+}
+
+.title {
+    width: 100%;
+}
+
+.title h1{
+    color: white;
+    font-size: 80px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.title p {
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+}
+
+.btn {
+  margin-right: 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn p {
+  padding: 10px 0;
+  width: 150px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  background-color: #FFE014;
+  border-radius: 20px;
+  transition: 0.6s ease;
+}
+
+.btn p:hover {
+    background-color: #2A77E8;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .btn {
+    padding: 5px 0;
+  }
+}
