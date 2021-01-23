@@ -83,7 +83,15 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-  .btn {
-    padding: 5px 0;
+  .title h1 {
+    font-size: 60px;
+  }
+
+  .title p {
+    font-size: 15px;
+  }
+
+  .btn p {
+    padding: 7px 0;
   }
 }

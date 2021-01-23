@@ -19,17 +19,18 @@ nav .menu {
 }
 
 nav .menu li, nav .menu a {
-  height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 nav .menu li {
+  height: inherit;
   margin: 0 20px 0 40px;
 }
 
 nav .menu li a {
+    height: 70%;
     width: 100px;
     text-decoration: none;
     font-weight: bold;
@@ -70,17 +71,20 @@ nav .topnav { /* apply margin to all .topnav inside nav */
 }
 
 @media screen and (max-width: 825px) {
+
   nav .menu {
     display: none;
   }
 
   nav .menu.responsive {  /* Click on the menu */
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
-    width: 200px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  nav .menu.responsive a {
+    height: 100%;
   }
 
   nav .menu li a:hover {
@@ -90,8 +94,9 @@ nav .topnav { /* apply margin to all .topnav inside nav */
 
   nav .menu.responsive li {
     display: block;
-    padding-left: 0;   /* Remove earlier padding */
-
+    margin: 0;
+    height: 10%;
+    background-color: white;
   }
 
   nav .menu.responsive a {

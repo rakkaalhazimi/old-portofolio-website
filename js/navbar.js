@@ -1,16 +1,18 @@
 // Global variables
-let menu = document.querySelector(".menu");
+let menu = document.querySelector(".topnav.menu");
 let originalClass = "topnav menu";
+
 
 // What happen when you click menu
 function openMenu() {
 
   // Show menu upon click
   if (menu.className == originalClass) {
-    moveMenuUp();
+    menu.className += " responsive";
+	
   // Close menu after it
   } else {
-    moveMenuDown();
+    menu.className = originalClass;
   }
 
   // Change burger style upon click
@@ -25,7 +27,7 @@ function openMenu() {
 // Menu move up animation
 function moveMenuUp() {
 
-  menu.className += " responsive";  // name class change
+  menu.className += " responsive";  // add class name
   let responsive = document.querySelector("nav .menu.responsive");
   let top = 0;
   let moveUp = setInterval( () => {
@@ -47,7 +49,7 @@ function moveMenuDown() {
       responsive.style.top = `${top}px`;
       top--;
     } else {
-      menu.className = originalClass // name class change
+      menu.className = originalClass;  // delete last class
       clearInterval(moveDown);
     }
   }, 5);
