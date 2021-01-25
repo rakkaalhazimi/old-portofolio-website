@@ -1,0 +1,28 @@
+textarea {
+  border: 2px solid #DDDDDD;
+  outline: none;
+  resize: none;
+  
+  font-size: 16px;
+  
+  max-width: 60%;
+  max-height: 50%;
+}
+
+textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+button {
+  outline: none;
+}
+
+.app__result {
+  display: none;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__result h2 {margin-bottom: 20px;}
+.app__result textarea:focus {box-shadow: 0 0 5px rgba(81, 203, 238, 1);}

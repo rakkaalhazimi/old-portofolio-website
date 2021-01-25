@@ -38,7 +38,7 @@ main {
 
 /* First Main Child */
 .main-block.first {
-  color: white;
+  color: var(--text_color_white);
 
   background-image: url("../images/backgrounds/frontpage-desktop.png");
   background-repeat: no-repeat;
@@ -64,7 +64,7 @@ main {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
   width: 40%;
   height: 80%;
@@ -73,17 +73,27 @@ main {
   /*box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);*/
 }
 
+.desc-container h1 {
+  margin-bottom: 30px;
+  border-bottom: 2px solid tomato;
+	
+  color: tomato;
+}
+
+.desc-container p {
+  color: var(--text_color_black);
+}
 
 
 @media screen and (max-width: 600px) {
   .main-block.desc {
-    height: 200vh;
+    
   }
 
   .desc-container {
     flex-flow: column wrap;
-
-    width: 95%;
+	
+    width: 80%;
     height: 100%;
   }
 

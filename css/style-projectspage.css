@@ -1,20 +1,3 @@
-/* Convention */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Century Gothic;
-}
-
-html {scroll-behavior: smooth;}
-body {
-  width: 100%;
-  height: 100%;
-}
-ul {list-style-type: none;}
-a {text-decoration: none;}
-
-
 /* Main Tag */
 main {
   position: absolute;
@@ -32,17 +15,15 @@ main {
   justify-content: center;
 
   width: inherit;
-  height: 100vh;
+  height: inherit;
 }
 
 
 /* First main child */
 .main-block.first {
-  display: flex;
-  
   text-align: center;
   
-  color: white;
+  color: var(--text_color_white);
   background-image: url("../images/backgrounds/frontpage-desktop.png");
   background-repeat: no-repeat;
   background-position: right top;
@@ -50,22 +31,31 @@ main {
 }
 
 .main-block.first h1 {
-  font-size: 70px;
+  font-size: 12vmin;
 }
 
 .main-block.first p {
+  font-size: 3vmin;
   width: 80%;
 }
 
+
+
 /* Projects */
+.main-block.project {
+  display: block;
+  height: 100%;
+}
+
 .project-container {
   display: flex;
   flex-flow: row wrap;
-  margin: 10px 0;
-  width: 90%;
-  height: 30%;
+  justify-content: space-between;
+  margin: 50px auto;
+  width: 80vw;
+  height: 40vh;
 
-  border: 2px solid tomato;
+  border: 2px solid transparent;
 }
 
 .project-container .left-box {
@@ -75,18 +65,31 @@ main {
 }
 
 .project-container .right-box {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  
   width: 70%;
+  text-align: justify;
+  border: 1px solid tomato;
 }
+
+.right-box h1 {
+  margin-left: 10px;
+  color: black;
+}
+
+.right-box p {
+  margin: 0 10px;
+}
+
 
 @media screen and (max-width: 600px) {
 
-  .main-block.project {
-    height: 300vh;
+  .project-container {
+    height: 80vh;
   }
 
-  .project-container {
-    flex-flow: column wrap;
-  }
 
   .project-container .left-box {
     width: 100%;

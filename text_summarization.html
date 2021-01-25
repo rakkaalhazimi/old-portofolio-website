@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <link rel="stylesheet" type="text/css" href="css/style-projectspage.css">
+  <link rel="stylesheet" type="text/css" href="css/style-projectspage-text_sum.css">
+  <link rel="stylesheet" type="text/css" href="css/style-navbar.css">
+  <title>Text Summarization</title>
+</head>
+<body>
+
+  <header>
+
+    <nav>
+      <a class="topnav burger" onclick="openMenu()">
+        <div></div><div></div><div></div>
+      </a>
+
+      <ul class="topnav menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="active"><a href="projects.html">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+	  
+	  <div id="menu-close"></div>
+    </nav>
+    <script src="js/navbar.js"></script>
+
+  </header>
+
+  <main>
+	<div class="main-block first">
+	<h1>Text Summarization</h1>
+    <p>Do you want to summarize long article into managable size?.
+	Doing so will made you gain a better understanding about the topic.
+	Try it now by scrolling down or click the button below.
+	</p>
+	</div>
+	
+	<div class="main-block app">
+	  <h2>Insert Your Article Here</h2>
+	  <textarea id="article"
+			  cols="200" rows="40"
+			  placeholder="Insert any article here."></textarea>
+	  <br/>
+   	  <button onclick="get_summary()">Summarize</button>  
+	</div>
+	
+	<div class="main-block app__result">
+	  <h2>Result</h2>
+	  <textarea id="result" cols="200" rows="40"></textarea>
+	</div>
+  </main>
+
+
+  <script src="js/text_sum.js"></script>
+</body>
+</html>
