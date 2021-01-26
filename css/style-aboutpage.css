@@ -40,7 +40,7 @@ main {
 .main-block.first {
   color: var(--text_color_white);
 
-  background-image: url("../images/backgrounds/frontpage-desktop.png");
+  background-image: var(--bg_image_path);
   background-repeat: no-repeat;
   background-position: right top;
   background-attachment: fixed;
@@ -58,6 +58,7 @@ main {
 
 /* Description Class */
 .main-block.desc {
+
 }
 
 .desc-container {
