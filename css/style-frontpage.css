@@ -1,15 +1,11 @@
-/* Convention */
 body {
-    
-    width: 100vw;
-    height: 100vh;
-	
 	/* Background Image */
-	background-image: var(--bg_image_path);
-    background-size: cover; /* cover entire container */
+	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.4)), 
+					  var(--bg_image_path);
+   
     background-origin: border-box;
+	background-position: right top;
 	background-repeat: no-repeat;
-
 }
 
 /* Main Tag Section */
@@ -37,24 +33,22 @@ main {
 }
 
 .title {
-    width: 100%;
+  width: 100%;
 }
 
 .title h1{
-    color: var(--text_color_white);
-    font-size: 10vmin;
-    text-align: center;
-    letter-spacing: 2px;
-	
-	text-shadow: 5px 8px 5px rgba(19, 53, 105, 0.3);
+  color: var(--text_color_white);
+  font-size: 10vmin;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
 .title p {
-    color: var(--text_color_white);
-    font-size: 3vmin;
-    font-style: italic;
-    text-align: center;
-    letter-spacing: 2px;
+  color: var(--text_color_white);
+  font-size: 2.5vmin;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
 .button {
@@ -77,12 +71,12 @@ main {
   
   color: white;
   background-color: var(--primary_color);
-  box-shadow: 0 14px 20px rgba(19, 53, 105, 0.5);
   transition: 0.1s linear;
 }
 
 .btn p:hover {
-    background-color: var(--shade_color);
+  color: white;
+  background-color: var(--shade_color);
 }
 
 /* Footer Tag */

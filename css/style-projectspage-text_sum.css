@@ -1,20 +1,44 @@
 textarea {
-  border: 2px solid #DDDDDD;
   outline: none;
   resize: none;
   
-  font-size: 16px;
-  
   max-width: 60%;
   max-height: 50%;
+  
+  font-size: 16px;
+  
+  border: none;
+  background-color: black;
+  color: white;
 }
 
 textarea:focus {
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
 
+h2 {margin-bottom: 20px;}
+
 button {
   outline: none;
+  border: none;
+}
+
+.app, .app__result {
+ background-color: var(--bg_color);
+ color: var(--text_color_white);
+}
+
+.app button {
+  padding: 10px 15px;
+  
+  background-color: var(--primary_color);
+  color: var(--text_color_white);
+  
+  transition: 0.3s;
+}
+
+.app button:active {
+  background-color: var(--shade_color);
 }
 
 .app__result {
@@ -24,5 +48,4 @@ button {
   align-items: center;
 }
 
-.app__result h2 {margin-bottom: 20px;}
 .app__result textarea:focus {box-shadow: 0 0 5px rgba(81, 203, 238, 1);}

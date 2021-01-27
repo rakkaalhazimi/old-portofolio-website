@@ -1,13 +1,16 @@
 /* Global Variables */
 :root {
-  --primary_color: #2A77E8;
-  --secondary_color: #E8CD1E;
+  --primary_color: #801EE8;
+  --secondary_color: #1DF514;
   --tertiary_color: #B5E813;
-  --shade_color: #1E55A8;
-  --text_color_white: white;
-  --text_color_black: #393C40;
+  --shade_color: #5D16A8;
+  --shadow_color: rgba(58, 14, 105, 0.5);
   
-  --bg_image_path: url("../images/backgrounds/frontpage_andreas-gucklhorn.jpg");
+  --text_color_white: #E8E8E8;
+  --text_color_black: #8B8B8B;
+  
+  --bg_image_path: url("../images/backgrounds/frontpage_altumcode.jpg");
+  --bg_color: #171717;
 }
 
 /* Convention */
@@ -25,7 +28,7 @@ body {
 }
 ul {list-style-type: none;}
 a {text-decoration: none;}
-
+button {outline:none;}
 
 /* Header Section */
 header {
@@ -45,7 +48,7 @@ nav .menu {
   align-items: center;
   justify-content: center;
   
-  background: rgba(42, 119, 232, 0.8);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 nav .menu li, nav .menu a {
@@ -72,7 +75,7 @@ nav .menu li a {
 }
 
 nav .menu li a:hover {  /* Mouse over menu */
-    color: #FFE014;
+    color: var(--primary_color);
 }
 
 nav .menu li.active a {
