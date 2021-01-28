@@ -54,26 +54,25 @@ main {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-  
+  gap: 40px;
+
   margin: 50px auto;
-  width: 90vh;
-  height: 100vh;
+
+  width: 70%;
 }
 
 .project-item {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  
-  width: 100%;
-  height: 20%;
+  justify-content: flex-start;
+  gap: 10px;
 
   border: 2px solid transparent;
 }
 
 .project-item .left-box {
-  width: 20%;
-  height: 100%;
+  width: 30vh;
+  height: 30vh;
   background-color: var(--primary_color);
 }
 
@@ -88,39 +87,32 @@ main {
 }
 
 .right-box h1 {
-  margin-left: 10px;
-  
   font-size: 24px;
   color: var(--text_color_white);
 }
 
+.right-box h1:hover {
+  color: var(--primary_color);
+  cursor: pointer;
+}
+
 .right-box p {
-  margin: 0 10px;
-  
   font-size: 14px;
   color: var(--text_color_black);
 }
 
 
 @media screen and (max-width: 600px) {
-
-  .project-container {height: auto;}
-
   .project-item {
-    height: 80vh;
+    justify-content: center;
   }
 
+  .project-item .right-box,
+  .project-item .left-box {width: 100%;}
 
-  .project-item .left-box {
-    width: 100%;
-    height: 30%;
+  .right-box h1 {
+    text-align: center;
   }
-
-  .project-item .right-box {
-    width: 100%;
-    height: 70%;
-  }
-
 }
 
 

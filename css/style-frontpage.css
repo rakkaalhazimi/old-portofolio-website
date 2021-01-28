@@ -52,15 +52,17 @@ main {
 }
 
 .button {
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  width: 100%;
 	margin-top: 20px;
-    text-align: center;
+
 }
 
 .btn {
-  margin-right: 20px;
   display: inline-block;
-  text-decoration: none;
 }
 
 .btn p {
@@ -109,6 +111,7 @@ footer p {
   }
 
   .btn p {
-    
+    width: 90px;
+    font-size: 0.8em;
   }
 }

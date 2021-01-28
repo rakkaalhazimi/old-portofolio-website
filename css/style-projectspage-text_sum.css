@@ -9,11 +9,11 @@ textarea {
   
   border: none;
   background-color: black;
-  color: white;
+  color: gray;
 }
 
 textarea:focus {
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  box-shadow: 0 0 5px rgba(232, 160, 53, 1);
 }
 
 h2 {margin-bottom: 20px;}
@@ -47,5 +47,3 @@ button {
   justify-content: center;
   align-items: center;
 }
-
-.app__result textarea:focus {box-shadow: 0 0 5px rgba(81, 203, 238, 1);}
