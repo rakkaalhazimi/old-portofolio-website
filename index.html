@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-  <link rel="stylesheet" type="text/css" href="css/style-frontpage.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/style-navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/style-frontpage.css">
   <title>Alhazimi</title>
 </head>
 <body>
@@ -16,11 +16,11 @@
         <div></div><div></div><div></div>
       </a>
 
-      <ul class="topnav menu">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul class="navbar">
+        <li><a href="#intro">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 	  
 	  <div id="menu-close"></div>
@@ -30,21 +30,53 @@
   </header>
 
   <main>
-    <div class="intro-container">
-      <div class="title">
+    <section id="intro" class="intro">
+      <div class="intro__title">
         <h1>HELLO THERE</h1>
         <p>My name is Rakka, welcome to my website</p>
       </div>
 
-      <div class="button">
-        <a href="about.html" class="btn"><p>About Me</p></a>
-        <a href="projects.html" class="btn"><p>Projects</p></a>
+      <div class="intro__buttons">
+        <a href="about.html"><p>About Me</p></a>
+        <a href="projects.html"><p>Projects</p></a>
       </div>
-    </div>
+
+      <p class="intro__img-src">Image by: AltumCode</p>
+    </section>
+
+    <section id="about" class="about">
+      <span class="about__profile">
+        <img src="images/photos/profile-image.png"
+             width="200px" height="200px">
+        <h2>Rakka Alhazmi</h2>
+        <p>Full Stack ML Engineer</p>
+      </span>
+
+      <span class="about__desc">
+        <h2>About Me</h2>
+        <p>
+          I'm graduate majoring in Development Economics, though I'm also learn some
+          programming languages. I have 1 year experience programming in Python and
+          focusing on data science, especially deep learning. My daily activity is
+          doing projects like face generator, text summarization, number detector etc.
+          to strengthen my problem solving skill. Sometimes, I entered Kaggle competition
+          to learn techniques used by other people. I also learn HTML, CSS and Javascript
+          to develop this portofolio website.
+        </p>
+        <button>Download CV</button>
+      </span>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>My Projects</h2>
+      <div class="projects__card">
+
+      </div>
+    </section>
   </main>
 
   <footer>
-	<p>Image by: AltumCode</p>
+
   </footer>
 
 

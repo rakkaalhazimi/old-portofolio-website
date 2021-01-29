@@ -1,57 +1,51 @@
-body {
-	/* Background Image */
-	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.4)), 
-					  var(--bg_image_path);
-   
-    background-origin: border-box;
-	background-position: right top;
-	background-repeat: no-repeat;
-}
-
 /* Main Tag Section */
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  height: 94vh; /* header is 6 vh */
+  height: 100%;
 }
 
-.intro-container {
+/* Intro Section */
+
+.intro {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 50%;
-  
-  
+
+  /* Background Image */
+	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.4)),
+					  var(--bg_image_path);
+
+  background-origin: border-box;
+	background-position: right top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
+  width: 100%;
+  height: 100vh;
 }
 
-.intro-container > div {
-}
-
-.title {
+.intro__title {
   width: 100%;
 }
 
-.title h1{
-  color: var(--text_color_white);
+.intro__title h1{
+  color: var(--text_color_title);
   font-size: 10vmin;
   text-align: center;
   letter-spacing: 2px;
 }
 
-.title p {
-  color: var(--text_color_white);
+.intro__title p {
+  color: var(--text_color_title);
   font-size: 2.5vmin;
   font-style: italic;
   text-align: center;
   letter-spacing: 2px;
 }
 
-.button {
+.intro__buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -61,11 +55,11 @@ main {
 
 }
 
-.btn {
+.intro__buttons button {
   display: inline-block;
 }
 
-.btn p {
+.intro__buttons p {
   padding: 10px 0;
   width: 120px;
   text-align: center;
@@ -76,42 +70,93 @@ main {
   transition: 0.1s linear;
 }
 
-.btn p:hover {
+.intro__buttons p:hover {
   color: white;
   background-color: var(--shade_color);
 }
 
-/* Footer Tag */
-footer p {
+.intro__img-src {
   position: absolute;
   left: 0;
   bottom: 0;
-  
+
   margin: 10px;
-  
+
   font-size: .8em;
   color: white;
 }
 
-@media screen and (max-width: 600px) {
-  .intro-container {
-	
-  }
-	
-  .title {
-	  
-  }
-	
-  .title h1 {
-    
-  }
 
-  .title p {
-    
-  }
+/* About Section */
+.about {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  min-height: 60vh;
 
-  .btn p {
-    width: 90px;
-    font-size: 0.8em;
-  }
+  background-color: var(--secondary_color);
 }
+.about h2 {
+  color: var(--text_color_subtitle);
+}
+.about p {
+  color: var(--text_color_paragraph);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.about__profile, .about__desc {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 40px 40px;
+}
+
+
+.about__profile {
+  max-width: 300px;
+  text-align: center;
+}
+.about__profile img {
+  margin-bottom: 10px;
+  width: 180px;
+  height: 180px;
+}
+.about__profile h2 {font-weight: normal;}
+
+
+.about__desc {
+  max-width: 500px;
+
+  text-align: justify;
+}
+.about__desc h2 {
+  font-size: 2em;
+  text-align: center;
+}
+.about__desc p {margin: 40px 0}
+.about__desc button {
+  align-self: flex-end;
+  padding: 10px 20px;
+
+  font-weight: bold;
+  color: var(--text_color_title);
+  background-color: var(--tertiary_color);
+}
+
+
+/* Projects Section */
+.projects {
+  height: 130vh;
+
+  background-color: var(--bg_color);
+}
+
+.projects h2 {
+  font-size: 2em;
+  text-align: center;
+  color: var(--text_color_title)
+}
+
+/* Footer Tag */
