@@ -148,15 +148,44 @@ main {
 
 /* Projects Section */
 .projects {
-  height: 130vh;
+  display: inline-block;
+  width: inherit;
+  min-height: 130vh;
 
   background-color: var(--bg_color);
 }
 
 .projects h2 {
+  margin: 40px 0 60px;
+
   font-size: 2em;
   text-align: center;
-  color: var(--text_color_title)
+  color: var(--text_color_title);
+}
+
+.projects__deck {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+
+  margin: 20px auto;
+  gap: 20px;
+
+  height: auto;
+}
+
+.projects__card {
+  width: 300px;
+  height: 300px;
+
+  background-color: var(--bg_color);
+  box-shadow: 0 10px 10px black;
+}
+
+.projects__card h3 {
+  font-weight: normal;
+  text-align: center;
+  color: var(--text_color_subtitle);
 }
 
 /* Footer Tag */
