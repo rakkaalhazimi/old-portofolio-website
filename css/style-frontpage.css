@@ -4,7 +4,7 @@ main {
   height: 100%;
 }
 
-/* Intro Section */
+/*=============================================== Intro Section ======================================================*/
 
 .intro {
   display: flex;
@@ -87,7 +87,7 @@ main {
 }
 
 
-/* About Section */
+/*================================================= About Section ====================================================*/
 .about {
   display: flex;
   flex-flow: row wrap;
@@ -146,7 +146,7 @@ main {
 }
 
 
-/* Projects Section */
+/*============================================== Projects Section ====================================================*/
 .projects {
   display: inline-block;
   width: inherit;
@@ -167,9 +167,10 @@ main {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  column-gap: 20px;
+  row-gap: 40px;
 
-  gap: 20px;
-  margin: 20px auto;
+  margin: 20px auto 100px;
 
   height: auto;
 }
@@ -201,43 +202,62 @@ main {
   color: var(--text_color_paragraph);
 }
 
-/* Footer Tag */
+/*===================================================== Footer Tag ===================================================*/
 
 footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 80px 30px;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 
+  height: auto;
   text-align: center;
   background-color: var(--footer_color);
 
+}
+
+footer > div {
+  margin-top: 20px;
 }
 
 footer li {
   display: inline;
   margin: 0 5px;
 }
+
 footer h4 {
-  margin-top: 10px;
-  margin-bottom: 5px;
   color: var(--text_color_subtitle);
 }
 
+/* Social Media Icon */
 footer .fa {
-  padding: 5px;
+  padding: 0 3px;
   font-size: 20px;
-  color: black;
+  color: var(--tertiary_color);
 }
 
-.footer__lang img {
-  padding: 2px; /* resize image icon */
-  width: 28px;
-  height: 28px;
 
+.footer__lang::before{
   filter: brightness(0) saturate(100%);
 }
+.footer__lang img {
 
-.footer__email li {margin: 0}
+  width: 25px;
+  height: 25px;
+
+  filter: invert(24%) sepia(72%) saturate(7037%) hue-rotate(305deg) brightness(81%) contrast(97%);
+}
+
+
+.footer__email ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__email li {margin: 0;}
+.footer__email span {
+  padding: 5px;
+  font-size: 0.9em;
+  color: var(--tertiary_color);
+}
 
 .footer__year {
   grid-column: 1 / span 3;
@@ -245,5 +265,5 @@ footer .fa {
   align-self: end;
 
   font-size: 0.8em;
-  color: var(--text_color_paragraph);
+  color: var(--tertiary_color);
 }
