@@ -3,13 +3,16 @@
   --primary_color: #801EE8;
   --secondary_color: #3A0E69;
   --tertiary_color: #C21291;
+  --light_color: #F514E9;
   --shade_color: #5D16A8;
   --shadow_color: rgba(58, 14, 105, 0.5);
   
   --text_color_title: #E8E8E8;
   --text_color_subtitle: #D1D1D1;
   --text_color_paragraph: #B9B9B9;
-  
+  --text_color_available: #149C3F;
+  --text_color_not-available: #E8C12A;
+
   --bg_image_path: url("../images/backgrounds/frontpage_altumcode.jpg");
   --bg_color: #171717;
   --footer_color: #4E059C;
@@ -35,6 +38,7 @@ button {outline:none; border:none;}
 /* Header Section */
 header {
   position: fixed;
+  z-index: 2;
   top: 0;
 
   width: 100%;

@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Rakka Alhazimi">
+  <meta name="description" content="Rakka Alhazimi's Portofolio Website">
+  <meta name="keywords" content="Rakka, Alhazimi, Portofolio">
+
   <link rel="stylesheet" type="text/css" href="css/style-navbar.css">
   <link rel="stylesheet" type="text/css" href="css/style-frontpage.css">
   <!--Social Media Icons-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Rakka Alhazimi</title>
 </head>
+
 <body>
 
   <header>
@@ -65,29 +71,43 @@
           to learn techniques used by other people. I also learn HTML, CSS and Javascript
           to develop this portofolio website.
         </p>
-        <button>Download CV</button>
+        <a href="downloads/CV_Rakka_Alhazimi.pdf" download="CV_Rakka_Alhazimi">
+          <button>Download CV</button></a>
       </div>
     </section>
 
     <section id="projects" class="projects">
+
       <h2>My Projects</h2>
       <div class="projects__deck">
+
         <div class="projects__card">
-          <img src="images/backgrounds/aaron-burden-unsplash.jpg">
+          <div class="container">
+            <img src="images/backgrounds/aaron-burden-unsplash.jpg">
+            <div class="overlay"></div>
+          </div>
           <h3>Text Summarization</h3>
-          <p>Available</p>
+          <p class="projects__card--available">Available</p>
         </div>
         <div class="projects__card">
-          <img src="images/backgrounds/sylvia-yang-unsplash.jpg">
+          <div class="container">
+            <img src="images/backgrounds/sylvia-yang-unsplash.jpg">
+            <div class="overlay"></div>
+          </div>
           <h3>Image Captioning</h3>
-          <p>Coming Soon</p>
+          <p class="projects__card--not_available">Coming Soon</p>
         </div>
         <div class="projects__card">
-          <img src="images/backgrounds/csyday-arknight-small.jpg">
+          <div class="container">
+            <img src="images/backgrounds/csyday-arknight-small.jpg">
+            <div class="overlay"></div>
+          </div>
           <h3>Arknights Chat Bot</h3>
-          <p>Coming Soon</p>
+          <p class="projects__card--not_available">Coming Soon</p>
+
         </div>
       </div>
+
     </section>
   </main>
 
@@ -98,16 +118,16 @@
       <ul>
 
         <li>
-          <a href="#"><img src="images/logos/html5.png"></a>
+          <a href=""><img src="images/logos/html5.png"></a>
         </li>
         <li>
-          <a href="#"><img src="images/logos/css3.png"></a>
+          <a href=""><img src="images/logos/css3.png"></a>
         </li>
         <li>
-          <a href="#"><img src="images/logos/javascript.png"></a>
+          <a href=""><img src="images/logos/javascript.png"></a>
         </li>
         <li>
-          <a href="#"><img src="images/logos/python.png"></a>
+          <a href=""><img src="images/logos/python.png"></a>
         </li>
 
       </ul>
@@ -115,17 +135,21 @@
     <div class="footer__social">
       <h4>Social Media</h4>
       <ul>
-        <li><a href="#" class="fa fa-facebook"></a></li>
-        <li><a href="#" class="fa fa-twitter"></a></li>
-        <li><a href="#" class="fa fa-linkedin"></a></li>
-        <li><a href="#" class="fa fa-instagram"></a></li>
-        <li><a href="#" class="fa fa-github"></a></li>
+        <li><a href="https://www.facebook.com/winter.rakka"
+               target="_blank" class="fa fa-facebook"></a></li>
+        <li><a href="https://twitter.com/AlhazimiRakka"
+               target="_blank" class="fa fa-twitter"></a></li>
+        <li><a href="https://www.linkedin.com/in/rakka-alhazimi-707848198/"
+               target="_blank" class="fa fa-linkedin"></a></li>
+        <li><a href="https://www.instagram.com/rakkayombex/"
+               target="_blank" class="fa fa-instagram"></a></li>
+        <li><a href="https://github.com/rakkaalhazimi"
+               target="_blank" class="fa fa-github"></a></li>
       </ul>
     </div>
     <div class="footer__email">
       <h4>Feedback Email</h4>
       <ul>
-        <li><a class="fa fa-google"></a></li>
         <li><span>garciagyax@gmail.com</span></li>
       </ul>
 

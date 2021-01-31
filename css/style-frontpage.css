@@ -32,14 +32,14 @@ main {
 
 .intro__title h1{
   color: var(--text_color_title);
-  font-size: 10vmin;
+  font-size: max(3.5em, 5vw);
   text-align: center;
   letter-spacing: 2px;
 }
 
 .intro__title p {
   color: var(--text_color_title);
-  font-size: 2.5vmin;
+  font-size: max(1em, 1vw);
   font-style: italic;
   text-align: center;
   letter-spacing: 2px;
@@ -136,13 +136,15 @@ main {
   text-align: center;
 }
 .about__desc p {margin: 40px 0}
+.about__desc a {align-self: flex-end;}
 .about__desc button {
-  align-self: flex-end;
   padding: 10px 20px;
-
   font-weight: bold;
   color: var(--text_color_title);
   background-color: var(--tertiary_color);
+}
+.about__desc button:hover {
+  background-color: var(--light_color);
 }
 
 
@@ -183,10 +185,31 @@ main {
   box-shadow: 0 10px 10px black;
 }
 
+.projects__card .container {
+  position: relative;
+  z-index: 1; /* navbar z-index: 2 */
+}
+
+.projects__card .overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.projects__card .overlay:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.6s;
+}
+.projects__card .overlay:after {
+
+}
+
 .projects__card img {
+  display: block;
   width: 300px;
   height: 225px;
 }
+
 
 .projects__card h3 {
   margin-top: 10px;
@@ -199,8 +222,9 @@ main {
 .projects__card p {
   text-align: center;
   font-size: 0.9em;
-  color: var(--text_color_paragraph);
 }
+.projects__card--available {color: var(--text_color_available);}
+.projects__card--not_available {color: var(--text_color_not-available);}
 
 /*===================================================== Footer Tag ===================================================*/
 
@@ -224,6 +248,7 @@ footer li {
 }
 
 footer h4 {
+  margin-bottom: 5px;
   color: var(--text_color_subtitle);
 }
 
@@ -231,19 +256,21 @@ footer h4 {
 footer .fa {
   padding: 0 3px;
   font-size: 20px;
-  color: var(--tertiary_color);
+  color: black;
 }
 
-
-.footer__lang::before{
-  filter: brightness(0) saturate(100%);
+footer .fa:hover, .footer__email span:hover {
+  color: var(--light_color);
 }
+
 .footer__lang img {
-
   width: 25px;
   height: 25px;
+  filter: brightness(0) saturate(100%);
+}
 
-  filter: invert(24%) sepia(72%) saturate(7037%) hue-rotate(305deg) brightness(81%) contrast(97%);
+.footer__lang img:hover {
+  filter: invert(20%) sepia(80%) saturate(3619%) hue-rotate(291deg) brightness(104%) contrast(112%);
 }
 
 
@@ -255,8 +282,9 @@ footer .fa {
 .footer__email li {margin: 0;}
 .footer__email span {
   padding: 5px;
+  font-weight: bold;
   font-size: 0.9em;
-  color: var(--tertiary_color);
+  color: black;
 }
 
 .footer__year {
