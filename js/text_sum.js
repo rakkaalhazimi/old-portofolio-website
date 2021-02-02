@@ -13,7 +13,7 @@ function request_summary(req_data) {
 	}
   }
 
-  xhttp.open("POST", "http://127.0.0.1:5000/text_sum/", true);
+  xhttp.open("POST", "https://alhazimi.herokuapp.com/text_sum/", true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(req_data);
 }
