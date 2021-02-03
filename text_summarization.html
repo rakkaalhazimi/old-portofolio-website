@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-  <link rel="stylesheet" type="text/css" href="css/style-projectspage.css">
-  <link rel="stylesheet" type="text/css" href="css/style-projectspage-text_sum.css">
   <link rel="stylesheet" type="text/css" href="css/style-navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/style-text_sum.css">
   <title>Text Summarization</title>
 </head>
 <body>
@@ -17,11 +16,11 @@
         <div></div><div></div><div></div>
       </a>
 
-      <ul class="topnav menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li class="active"><a href="projects.html">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul class="navbar">
+        <li><a href="index.html#intro">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
 	  
 	  <div id="menu-close"></div>
@@ -30,30 +29,34 @@
 
   </header>
 
-  <main>
-	<div class="main-block first">
-	<h1>Text Summarization</h1>
-    <p>
-	Summarize long article into managable size will made you gain a better
-	understanding about the topic.
-	</p>
-	<p>Try it now by scrolling down or click the button below.</p>
+  <main class="app">
+	  <div class="app__intro">
+      <div class="container">
+        <h1>Text Summarization</h1>
+        <p>
+          Summarize long article into manageable size to gain a better
+          understanding about the topic. The algorithm works by scoring your article
+          sentence by sentence. Each sentence is considered as a set of words that end
+          with "." mark. <strong>We emphasize you to not use the dot mark (".") in the middle of
+          sentence or else it will be recognized as sentence.</strong>
+        </p>
+      </div>
+	  </div>
 	
-	</div>
+    <div class="app__main">
+      <div class="container">
+        <textarea id="article"
+          cols="40" rows="20"
+          placeholder="Insert any article here."></textarea>
+        <br/>
+        <button onclick="get_summary()">Summarize</button>
+      </div>
+    </div>
 	
-	<div class="main-block app">
-	  <h2>Insert Your Article Here</h2>
-	  <textarea id="article"
-			  cols="200" rows="40"
-			  placeholder="Insert any article here."></textarea>
-	  <br/>
-   	  <button onclick="get_summary()">Summarize</button>  
-	</div>
-	
-	<div class="main-block app__result">
-	  <h2>Result</h2>
-	  <textarea id="result" cols="200" rows="40"></textarea>
-	</div>
+    <div class="app__result">
+      <!--<h2>Result</h2>-->
+      <div id="result"></div>
+    </div>
   </main>
 
 
