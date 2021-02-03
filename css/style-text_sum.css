@@ -34,18 +34,6 @@ p {
   min-height: 100vh;
 }
 
-@media only screen and (max-width: 650px) {
-    .app {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "intro"
-        "main"
-        "result";
-      }
-
-    .app__main {border-bottom: 1px solid white;}
-  }
-
 /* Container inside app */
 .container {
   margin: 10px;
@@ -70,6 +58,7 @@ p {
 }
 
 .app__result {
+  min-height: 100vh;
   border-left: 1px solid white;
 }
 
@@ -88,4 +77,18 @@ textarea {
 textarea:focus {
   box-shadow: 0 0 5px rgba(232, 160, 53, 1);
 }
+
+@media only screen and (max-width: 650px) {
+    .app {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "intro"
+        "main"
+        "result";
+      }
+
+    .app__main {border-bottom: 1px solid white;}
+    .app__result {border-left: none;}
+  }
+
 
