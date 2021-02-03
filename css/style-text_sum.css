@@ -89,6 +89,7 @@ textarea:focus {
 
     .app__main {border-bottom: 1px solid white;}
     .app__result {border-left: none;}
+    .container {margin-bottom: 40px;}
   }
 
 
