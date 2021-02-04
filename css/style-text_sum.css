@@ -1,3 +1,4 @@
+/*============================================ Convention ============================================================*/
 body {background-color: var(--bg_color);}
 h1 {
   margin-bottom: 10px;
@@ -6,7 +7,7 @@ h1 {
 h2 {color: var(--text_color_subtitle);}
 
 p {
-  font-size: 0.95em;
+  font-size: 0.9em;
   text-align: justify;
   line-height: 1.5;
   color: var(--text_color_paragraph);}
@@ -31,15 +32,16 @@ p {
   margin: 8vh auto 0;
 
   max-width: 90vw;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 /* Container inside app */
 .container {
   margin: 10px;
+  height: 100%;
 }
 
-
+/*============================================= Main App =============================================================*/
 .app__main {
   display: flex;
   flex-flow: column nowrap;
@@ -57,9 +59,23 @@ p {
   color: white;
 }
 
+/*============================================= App Output ===========================================================*/
+
 .app__result {
-  min-height: 100vh;
+  min-height: inherit;
   border-left: 1px solid white;
+}
+
+.app__result .container {
+  position: relative;
+}
+
+.app__result #loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 textarea {
@@ -77,6 +93,8 @@ textarea {
 textarea:focus {
   box-shadow: 0 0 5px rgba(232, 160, 53, 1);
 }
+
+/*============================================= Media Query ==========================================================*/
 
 @media only screen and (max-width: 650px) {
     .app {

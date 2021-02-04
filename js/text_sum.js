@@ -1,6 +1,7 @@
 var summary;
 let article = document.getElementById("article");
 let result = document.getElementById("result")
+let loading = document.getElementById("loading");
 
 function split_and_generate(sen) {
   // Split sentences
@@ -19,11 +20,25 @@ function split_and_generate(sen) {
   }
 }
 
+// Function to request summarization from API
 function request_summary(req_data) {
+  // Redirect to result page
+  window.location = "#result"
+
+  // Instantiate request object
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
+
+    // When receive OK status from API
     if (this.readyState == 4 && this.status == 200) {
-       split_and_generate(this.responseText);
+      // Remove loading image when finish
+      loading.style.display = "none";
+      split_and_generate(this.responseText);
+    }
+
+    // Else, show the loading image
+    else {
+      loading.style.display = "inline";
     }
   }
 
@@ -32,12 +47,14 @@ function request_summary(req_data) {
   xhttp.send(req_data);
 }
 
+// Function to remove all result content
 function remove_child(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
 }
 
+// Main Function
 function get_summary() {
 
   // Remove all child
