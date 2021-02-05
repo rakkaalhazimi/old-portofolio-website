@@ -47,7 +47,7 @@ p {
   flex-flow: column nowrap;
 }
 
-.app__main button {
+.app__main #button {
   padding: 10px 0;
   width: 120px;
 
