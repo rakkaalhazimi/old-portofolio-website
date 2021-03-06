@@ -82,6 +82,12 @@ function get_summary() {
   // Remove all child
   remove_child(result);
 
+  // Article Validation
+  if (article.value == "") {
+    alert("Article can't be empty");
+    return false;
+  }
+
   // Fetch article
   data = {"date": Date.now(), "article": article.value}
   data = JSON.stringify(data)

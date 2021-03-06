@@ -41,10 +41,16 @@ p {
   height: 100%;
 }
 
+.app__intro .container,
+.app__main .container {
+  margin-right: 60px;
+}
+
+
 /*============================================= Main App =============================================================*/
 .app__main {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
 }
 
 .app__main #button {
@@ -63,7 +69,6 @@ p {
 
 .app__result {
   min-height: inherit;
-  border-left: 1px solid white;
 }
 
 .app__result .container {
@@ -105,9 +110,9 @@ textarea:focus {
         "result";
       }
 
-    .app__main {border-bottom: 1px solid white;}
     .app__result {border-left: none;}
-    .container {margin-bottom: 40px;}
+    .container {
+      margin-bottom: 40px;}
   }
 
 
