@@ -1,0 +1,89 @@
+/*============================================ Convention ============================================================*/
+body {background-color: var(--bg_color);}
+h1 {
+  margin-top: 10px;
+  color: var(--text_color_title);}
+
+h2 {color: var(--text_color_subtitle);}
+
+p, label {
+  font-size: 0.9em;
+  text-align: justify;
+  line-height: 1.5;
+  color: var(--text_color_paragraph);}
+
+
+.app__intro {grid-area: intro;}
+.app__main {grid-area: main;}
+.app__result {grid-area: result;}
+
+.app {
+  display: grid;
+  grid-template-areas:
+  "intro"
+  "main"
+  "result";
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr auto auto;
+
+  margin: 8vh auto 0;
+
+  max-width: 90vw;
+  min-height: 90vh;
+}
+
+/*============================================== Main App ============================================================*/
+
+.app__intro {
+  margin: auto; /* Center text */
+}
+
+.app__main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__main .upload-box {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 300px;
+  border: 1px solid white;
+}
+
+.app__main .upload-label {
+  width: 100px;
+  padding: 2px;
+
+  background: var(--primary_color);
+}
+
+#upload-button {
+  padding: 5px 0;
+  width: 100px;
+}
+
+#upload-button:active{
+  background-color: gray;
+}
+
+#submit-button {
+  margin-top: 10px;
+  padding: 10px 0;
+  width: 120px;
+
+  background-color: var(--primary_color);
+  color: white;
+}
+
+
+#submit-button:active{
+  background-color: white;
+  color: black;
+}

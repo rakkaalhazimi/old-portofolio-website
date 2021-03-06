@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style-navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/style-image_captioning.css">
+  <title>Image Captioning</title>
+</head>
+<body>
+
+  <header>
+
+    <nav>
+      <a class="topnav burger" onclick="openMenu()">
+        <div></div><div></div><div></div>
+      </a>
+
+      <ul class="navbar">
+        <li><a href="index.html#intro">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+	  <div id="menu-close"></div>
+    </nav>
+    <script src="js/navbar.js"></script>
+
+  </header>
+
+  <main class="app">
+    <div class="app__intro">
+      <h1>Image Captioning</h1>
+      <p>Insert any image that not larger than 5MB :)</p>
+    </div>
+
+    <div class="app__main">
+
+      <div class="upload-box">
+        <img id="uploaded-image" width="250" height="250" hidden>
+        <input type="file" id="image-file" accept=".jpg, .jpeg, .png" hidden>
+        <label for="image-file" id="image-name">No file choosen yet..</label>
+      <button id="upload-button">Choose File</button>
+      </div>
+      <button id="submit-button" onclick="submit()">Submit</button>
+
+    </div>
+
+    <div class="app__result">
+
+    </div>
+  </main>
+
+  <script src="js/image_capt.js"></script>
+
+</body>
+</html>
