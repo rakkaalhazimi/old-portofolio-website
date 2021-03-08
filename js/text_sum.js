@@ -20,7 +20,7 @@ function add_children(elm, ...children) {
   return elm;
 }
 
-
+// Function to format the summarization result
 function split_and_generate(sen) {
   // Split sentences
   sentences = sen.split(".")
@@ -62,8 +62,8 @@ function request_summary(req_data) {
       loading.style.display = "inline";
       button.setAttribute("disabled", "")
     }
-  }
 
+  }
   xhttp.open("POST", "https://alhazimi.herokuapp.com/text_sum/", true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(req_data);

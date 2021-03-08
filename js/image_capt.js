@@ -39,23 +39,37 @@ input_file.addEventListener("change", (e) => {
       }
       // Preview the image
       image_preview.src = event.target.result;
+      image_bin = event.target.result;
     });
     reader_url.readAsDataURL(file)
 
-    // Read image data as binary
-    const reader_bin = new FileReader();
-    reader_bin.onload = () => image_bin = reader_bin.result;
-    reader_bin.readAsBinaryString(file);
-})
-
-submit_btn.addEventListener("click", () => {
-  // Set up AJAX
-  const xhttps = new XMLHttpRequest();
-  xhttps.onload = () => {
-    console.log("File sent !");
   }
-
-  xhttp.open("POST", "https://alhazimi.herokuapp.com/image_capt/", true);
-  xhttp.send(image_bin)
-
 })
+
+
+function submit(e) {
+
+  // Prevent default submit
+
+
+  if (image_bin) {
+    // Set up JSON
+    let bin = image_bin.split(",")[1];
+
+    let data = {"image": bin};
+    data = JSON.stringify(data)
+
+    // Set up AJAX
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = () => {
+      console.log("File sent !");
+    }
+
+    xhttp.open("POST", "http://127.0.0.1:5000/img_capt/", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send(data)
+  }
+  else alert("No image found");
+}
+
+submit_btn.addEventListener("click", submit);
