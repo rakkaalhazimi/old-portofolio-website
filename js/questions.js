@@ -1,6 +1,7 @@
 // global variables
 let counts = document.getElementById("counts");
 let sheet = document.getElementById("sheet");
+const limit = 10;
 
 // Error Message
 function inputError() {
@@ -35,11 +36,9 @@ function generate(event) {
 	let counts_value = Number(counts.value);
 	if (counts_value) {
 		console.log("success");
-		let nodes = createMiddleOptionsTag(counts_value)
+		let node = createOuterOptionsTag(counts_value)
+		sheet.appendChild(node);
 		
-		for (node of nodes) {
-				sheet.appendChild(node);
-		}
 		
 	} else {
 		inputError();
@@ -79,11 +78,11 @@ function createOptionsTag(num) {
 	} return nodes
 }
 
-function createInnerOptionsTag(numbers) {
+function createInnerOptionsTag(start, end) {
 	// List of tags needed
 	let nodes = [];
 	
-	for (num = 1; num <= numbers; num++) {
+	for (num = start; num <= end; num++) {
 		
 		let optionsTag = createOptionsTag(num);
 		let innerNearWrapper = elt("div", "col d-flex gap-2", "", ...optionsTag);
@@ -95,22 +94,36 @@ function createInnerOptionsTag(numbers) {
 	return nodes;
 }
 
-function createMiddleOptionsTag() {
+function createMiddleOptionsTag(sheet_number) {
 	// Inner Elements Tags
-	let innerElements = createInnerOptionsTag(10);
+	let upper_bound = sheet_number * limit; // upper limit is 10 or multiple
+	let lower_bound = upper_bound - (limit - 1); // lower limit is 
+	
+	let innerElements = createInnerOptionsTag(start=lower_bound, 
+																						end=upper_bound);
 	
 	// Div tag to wrap inner elements
 	let middleNearWrapper = elt("div", "row row-cols-1", "", ...innerElements);
 	let middleWrapper = elt("div", "col", "", middleNearWrapper);
 	
-	return [middleWrapper]
+	return middleWrapper
 }
 
 
-function createOuterOptionsTag() {
-	// Middle Elements Tags
-	let middleElements = createMiddleOptionsTag();
+function createOuterOptionsTag(counts_value) {
+	// List of tags needed
+	let nodes = [];
 	
+	let numberOfSheets = Math.ceil(counts_value / limit);
+	console.log("Debug " + numberOfSheets);
+	for (let num=1; num <= numberOfSheets; num++) {
+		// Middle Elements Tags
+		let middleElements = createMiddleOptionsTag(num);
+		nodes.push(middleElements)
+	}
+	
+	let outerWrapper = elt("div", "row row-cols-lg-3 row-cols-1 gy-3", "", ...nodes);
+	return outerWrapper;
 }
 
 function testHide() {
