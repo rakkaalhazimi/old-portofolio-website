@@ -10,18 +10,9 @@ const limit = 10;
 // EventListener
 genBtn.addEventListener("click", generate);
 
-// Error Message
+
 function inputError() {
 	alert("Please insert a number between 1 - 200");
-}
-
-// Continue or not button for modal
-function continuePress() {
-	continueState = true
-}
-
-function cancelPress() {
-	continueState = false
 }
 
 // HTML Tags Creator
@@ -48,7 +39,11 @@ function elt(type, cls="", attr="", ...children) {
 }
 
 
-// Function to remove all result content
+function showModal() {
+	myModal.show();
+}
+
+
 function remove_child(parent) {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
@@ -60,25 +55,40 @@ function generate(event) {
 	let countsValue = Number(counts.value);
 	if (countsValue) {
 		
-		// First time sheet will skip, otherwise warn the user
+		// Warn the user when there is an existing sheet
 		if (sheet.childElementCount) {
-			myModal.show();
 			
 			// Delete previous sheet children
 			remove_child(sheet);
-		}
 			
-		
-		
-		// Then add the nodes
+			// Create the tags
+			let node = createOuterOptionsTag(countsValue)
+			sheet.appendChild(node);
+			
+			// Close Modal
+			myModal.hide();
+			
+			return true;
+		}
+		// Otherwise, just create the tags
 		let node = createOuterOptionsTag(countsValue)
 		sheet.appendChild(node);
 		
+		// Replace genBtn eventListener with show modal function
+		genBtn.removeEventListener("click", generate);
+		genBtn.addEventListener("click", showModal);
 		
+		// Then switch the generate event to modal button
+		modalYesBtn.addEventListener("click", generate);
+		
+		return true;
+				
 	} else {
 		inputError();
-	};
+		return false;
+	}
 }
+
 
 
 
@@ -150,7 +160,7 @@ function createOuterOptionsTag(countsValue) {
 	let nodes = [];
 	
 	let numberOfSheets = Math.ceil(countsValue / limit);
-	console.log("Debug " + numberOfSheets);
+	// console.log("Debug " + numberOfSheets);
 	for (let num=1; num <= numberOfSheets; num++) {
 		// Middle Elements Tags
 		let middleElements = createMiddleOptionsTag(num);
