@@ -2,8 +2,12 @@
 let counts = document.getElementById("counts");
 let sheet = document.getElementById("sheet");
 let genBtn = document.getElementById("gen-btn");
+
 let modalYesBtn = document.getElementById("modal-yes-btn");
 let myModal = new bootstrap.Modal(document.getElementById("exampleModal"))
+
+let answerCounter = document.getElementById("answer-counter");
+let answerCounts = 0;
 
 const limit = 10;
 
@@ -115,8 +119,15 @@ function createOptionsTag(num) {
 												 children=`${opt}`)
 		
 		let radio_nodes = [inputNode, labelNode];
+		
+		// Options style
+		let optStyle = "BD".includes(opt) ? "": "";
+		
 		// Wrap all options inside this tag
-		let form_check = elt("div", cls="form-check", attr="", ...radio_nodes);										 
+		let form_check = elt("div", 
+											   cls=`form-check ${optStyle}`, 
+												 attr="",
+												 ...radio_nodes);										 
 											 
 		nodes.push(form_check);
 		
@@ -131,6 +142,8 @@ function createInnerOptionsTag(start, end) {
 		
 		let optionsTag = createOptionsTag(num);
 		let innerNearWrapper = elt("div", "col d-flex gap-2", "", ...optionsTag);
+		// Add count event on wrapper
+		innerNearWrapper.addEventListener("change", testAdd, {once: true});
 		
 		// Div tag to wrap the options
 		let innerWrapper = elt("div", "col", "", innerNearWrapper);
@@ -171,6 +184,8 @@ function createOuterOptionsTag(countsValue) {
 	return outerWrapper;
 }
 
-function testHide() {
+function testAdd() {
+	answerCounts++;
+	answerCounter.innerHTML = `Answered: ${answerCounts}`;
 	
 }
