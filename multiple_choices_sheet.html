@@ -22,20 +22,19 @@
 		<section id="intro", class="mb-3">
 			<div class="container-sm">
 				<h1 class="mt-3 mb-5 text-center">Multiple Choices Sheet</h1>
-				<form class="row gy-3 justify-content-center">
-					
-					<label for="counts" class="col-auto col-form-label">Counts:</label>
-					<div class="col-auto">
-						<input type="text" class="form-control" id="counts" 
-						placeholder="How many questions">
-					</div>
-					
-					<div class="col-auto">
-						<button type="submit" class="btn btn-primary mb-3" id="gen-btn"
-						onclick="generate(); return false;">Generate</button>
-						<!-- return false to prevent page loading -->
-					</div>
-				</form>
+				<div class="row gy-3 justify-content-center">
+					<form class="col-auto">
+						<div class="row">
+							<label for="counts" class="col-auto col-form-label">Counts:</label>
+							<div class="col-auto">
+								<input type="text" class="form-control" id="counts" 
+								placeholder="How many questions">
+							</div>
+						</div>
+					</form>
+					<button type="submit" class="btn btn-primary mb-3 col-auto" 
+					id="gen-btn">Generate</button>
+				</div>
 			</div>
 		</section>
 		<!--End intro-->
@@ -428,6 +427,30 @@
 		</section>
 		
 		<!-- End sheet-->
+		
+		<!-- Start Modal -->
+		<div class="modal" id="exampleModal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Start New Sheets</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p>
+							If you continue, your previous sheets will be deleted and
+							it will start with the new sheet.
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+						<button type="button" class="btn btn-warning" id="modal-yes-btn">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Modal -->
+		
 		
 		<nav aria-label="..." class="d-none">
 			<ul class="pagination">
