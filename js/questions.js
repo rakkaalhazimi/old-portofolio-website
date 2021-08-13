@@ -57,6 +57,10 @@ function remove_child(parent) {
 // Toggle Sheet Creation
 function generate(event) {
 	let countsValue = Number(counts.value);
+	
+	// Reset answer counter
+	answerCounts = 0
+	
 	if (countsValue) {
 		
 		// Warn the user when there is an existing sheet
