@@ -152,11 +152,17 @@ function createInnerOptionsTag(start, end) {
 	return nodes;
 }
 
-function createMiddleOptionsTag(sheet_number) {
-	// Inner Elements Tags
-	let upperBound = sheet_number * limit; // upper limit is 10 or multiple
-	let lowerBound = upperBound - (limit - 1); // lower limit is 
+function createMiddleOptionsTag(countsValue, sheetNumber) {
+	// Answer limit per sheet
+	let upperBound = limit * sheetNumber; // upper limit is 10 or multiple
+	let lowerBound = upperBound - (limit - 1);
 	
+	// Adjust the max number per sheet
+	if (countsValue < upperBound) {
+		upperBound = countsValue;
+	}
+	
+	// Inner Elements Tags
 	let innerElements = createInnerOptionsTag(start=lowerBound, 
 																						end=upperBound);
 	
@@ -176,7 +182,7 @@ function createOuterOptionsTag(countsValue) {
 	// console.log("Debug " + numberOfSheets);
 	for (let num=1; num <= numberOfSheets; num++) {
 		// Middle Elements Tags
-		let middleElements = createMiddleOptionsTag(num);
+		let middleElements = createMiddleOptionsTag(countsValue, num);
 		nodes.push(middleElements)
 	}
 	
