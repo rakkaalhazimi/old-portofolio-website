@@ -60,6 +60,7 @@ function generate(event) {
 	
 	// Reset answer counter
 	answerCounts = 0
+	answerCounter.innerHTML = `Answered: ${answerCounts}`;
 	
 	if (countsValue) {
 		
