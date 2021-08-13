@@ -9,6 +9,8 @@ let myModal = new bootstrap.Modal(document.getElementById("exampleModal"))
 let answerCounter = document.getElementById("answer-counter");
 let answerCounts = 0;
 
+const minAnswer = 1;
+const maxAnswer = 200;
 const limit = 10;
 
 // EventListener
@@ -62,7 +64,7 @@ function generate(event) {
 	answerCounts = 0
 	answerCounter.innerHTML = `Answered: ${answerCounts}`;
 	
-	if (countsValue) {
+	if (countsValue >= minAnswer && countsValue <= maxAnswer) {
 		
 		// Warn the user when there is an existing sheet
 		if (sheet.childElementCount) {
